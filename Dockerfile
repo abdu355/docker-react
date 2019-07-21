@@ -10,5 +10,7 @@ RUN npm run build
 
 # new block - run phase
 FROM nginx 
+# elasticbeanstalk will look for expose instructions
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 # nginx will start up by default
